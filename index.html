@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles/style.css">
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+</head>
+<body>
+  <main class="main" >
+    <div class="modal">
+      <div class="modal__rules-container">
+        <img class="modal__rules" src="images/image-rules.svg" alt="rules">
+        <button class="modal__btn"><img src="images/icon-close.svg" alt="close"> </button>
+      </div>
+    </div>
+    <div class="score__container">
+      <img src="images/logo.svg" alt="Logo" class="score__logo"></img>
+      <div class="score__score">
+        <p class="score__score-title">SCORE</p>
+        <h2 class="score__score-score">0</h2>
+      </div>      
+    </div>
+    <div class="game__container" choose='0'>
+      <img class='triangle' src="images/bg-triangle.svg" alt="">
+      <div class="token__container">
+        <div class="rock__container first"><img src="images/icon-rock.svg" alt="rock" class="rock first"></div>
+        <div class="paper__container second"><img src="images/icon-paper.svg" alt="paper" class="paper second"></div>
+        <div class="scissors__container third"><img src="images/icon-scissors.svg" alt="scissors" class="scissors third"></div>
+        <button value='undefined' class="play__again">PLAY AGAIN</button>
+        <p class="another__created-paragraph"></p>
+    </div>
+      <button value='undefined' class='btn__rules' >Rules</button>
+  </div>
+  </main>
+  <script src="src/index.js"></script>
+</body>
+</html>
