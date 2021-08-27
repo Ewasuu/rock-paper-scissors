@@ -108,6 +108,7 @@ gameArea.addEventListener('click', (e)=>{
            div.appendChild(housePick)
         }, 1000)
         setTimeout(()=>{
+            document.body.style.setProperty('--after-border', 'radial-gradient(circle at center, #ffffff09 20%, transparent 20%, #ffffff09 25%, transparent 25%, #ffffff09 30%, transparent 30%)')
             chooseWinner(e.target.value, houseoption.class2)
             document.querySelector('.another__created-paragraph').textContent = gameWinner
             document.querySelector('.another__created-paragraph').style.display = 'block'
@@ -118,6 +119,7 @@ gameArea.addEventListener('click', (e)=>{
                     tokenArea.removeChild(paragraph)
                     tokenArea.removeChild(paragraph2)
                     document.querySelector('.another__created-paragraph').style.display = 'none'
+                    document.body.style.setProperty('--after-border', 'transparent')
                     gameArea.setAttribute('choose', '0')
                     playAgain.style.display = 'none'
                 }

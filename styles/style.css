@@ -7,7 +7,7 @@
 :root{
     font-family: 'Barlow Semi Condensed', sans-serif;
     /* colors */
-    --background: linear-gradient( hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    --background: radial-gradient( hsl(214, 47%, 23%), hsl(237, 49%, 15%));
     --Header-border: hsl(217, 16%, 45%);
     --Score-Text: hsl(229, 64%, 46%);
     --Dark-Text: hsl(229, 25%, 31%);
@@ -17,6 +17,7 @@
     --Rock-Gradient: linear-gradient(hsl(349, 71%, 52%) ,hsl(349, 70%, 56%));
     --Lizard-Gradient: linear-gradient(hsl(261, 73%, 60%) ,hsl(261, 72%, 63%));
     --Cyan: hsl(189, 59%, 53%) ,hsl(189, 58%, 57%);
+    --after-border: transparent;
 }
 html body{
     min-width: 320px;
@@ -113,6 +114,7 @@ html body{
     position: absolute;
     margin: 6px -9px;
 }
+
 .rock__container{
     grid-area: 2 / 1 / 2 / none;
     margin: 0 auto;
@@ -286,6 +288,7 @@ html body{
 }
 
 
+
 .game__container[choose='2'] .triangle,
 .game__container[choose='2'] .rock__container,
 .game__container[choose='2'] .scissors__container{
@@ -309,10 +312,31 @@ html body{
 .game__container[choose='3'] .token__container{
     grid-template-columns: repeat(2,120px);
     grid-template-rows: 90px 25px;
+    width: 1rem;
+}
+.game__container[choose='1'] .rock__container::after, .game__container[choose='2'] .paper__container::after, .game__container[choose='3'] .scissors__container::after {
+    content: '';
+    background: var(--after-border);
+    width: 320px;
+    height: 300px;
+    position: absolute;
+    margin: -120px -130px;
+    place-content: center;
+    z-index: -1000;
 }
 
 /* responsive */
 @media screen and (min-width: 375px) {
+    .game__container[choose='1'] .rock__container::after, .game__container[choose='2'] .paper__container::after, .game__container[choose='3'] .scissors__container::after {
+        content: '';
+        background: var(--after-border);
+        width: 370px;
+        height: 340px;
+        position: absolute;
+        margin: -132px -145px;
+        place-content: center;
+        z-index: -1000;
+    }
     .scissors__container2::before,
     .paper__container2::before,
     .rock__container2::before,
@@ -342,6 +366,16 @@ html body{
     }
 }
 @media screen and (min-width: 768px) {
+    .game__container[choose='1'] .rock__container::after, .game__container[choose='2'] .paper__container::after, .game__container[choose='3'] .scissors__container::after {
+        content: '';
+        background: var(--after-border);
+        width: 600px;
+        height: 490px;
+        position: absolute;
+        margin: -189px -238px;
+        place-content: center;
+        z-index: -1000;
+    }
     .triangle{
         width: 15rem;
         top: 76px;
@@ -427,6 +461,18 @@ html body{
     }
 }
 @media screen and (min-width: 900px) {
+    .game__container[choose='1'] .rock__container::after,
+    .game__container[choose='2'] .paper__container::after,
+    .game__container[choose='3'] .scissors__container::after {
+        content: '';
+        background: var(--after-border);
+        width: 800px;
+        height: 700px;
+        position: absolute;
+        margin: -267px -316px;
+        place-content: center;
+        z-index: -1000;
+    }
     .scissors__container2::before, .paper__container2::before, .rock__container2::before, .paper__container::before, .scissors__container::before, .rock__container::before {
         width: 195px;
         height: 167px;
@@ -455,6 +501,7 @@ html body{
         grid-template-columns: repeat(3,220px);
         grid-template-rows: 225px 50px;
     }
+
     .modal__rules-container{
         background-color: white;
         position: absolute;
